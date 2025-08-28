@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Burger {
+  id          String @id @default(uuid()) @map("_id")
+  name        String
+  description String
+  imageURL    String
+  price       Int
+  discount    Int?
+
+  @@map("burgers")
+}
