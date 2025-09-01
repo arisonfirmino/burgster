@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { Search } from "@/app/components/search/search";
 import { CategoriesList } from "@/app/components/menu/categories-list";
 import { ProductsList } from "@/app/components/menu/products-list";
 import { ReviewsList } from "@/app/components/menu/reviews-list";
@@ -23,6 +24,14 @@ function MenuSection({ categories, products, reviews }: MenuSectionProps) {
 
   return (
     <section className="bg-foreground text-primary-foreground flex w-full flex-col items-center gap-10 py-10 xl:h-screen">
+      <div className="w-full max-w-3xl px-5 lg:px-0">
+        <Search
+          products={products}
+          variant="outline"
+          className="hover:text-primary-foreground active:text-primary-foreground rounded-none border-0 border-b has-[>svg]:px-0"
+        />
+      </div>
+
       <div className="flex w-full items-center justify-end gap-5">
         <div className="flex w-full max-w-5xl gap-5">
           <CategoriesList

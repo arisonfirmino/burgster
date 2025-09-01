@@ -17,7 +17,7 @@ const Home = async () => {
   return (
     <>
       <Header>
-        <HeaderBar />
+        <HeaderBar products={products} />
         <Separator className="max-w-5xl" />
         <HeroSection />
         <ServiceHighlight />

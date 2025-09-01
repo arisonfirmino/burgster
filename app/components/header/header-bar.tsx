@@ -1,16 +1,17 @@
 import { Logo } from "@/app/components/logo";
+import { Search } from "@/app/components/search/search";
 import { Button } from "@/app/components/ui/button";
 
-import { CircleUserIcon, SearchIcon, ShoppingBagIcon } from "lucide-react";
+import { Product } from "@/app/types";
 
-function HeaderBar() {
+import { CircleUserIcon, ShoppingBagIcon } from "lucide-react";
+
+function HeaderBar({ products }: { products: Product[] }) {
   return (
     <div className="flex w-full max-w-5xl items-center gap-5 lg:gap-10">
       <Logo />
 
-      <Button variant="outline" className="w-full justify-between">
-        Pesquisar <SearchIcon />
-      </Button>
+      <Search products={products} variant="outline" />
 
       <div className="flex items-center gap-5">
         <Button variant="ghost" className="max-w-10 lg:max-w-fit">
