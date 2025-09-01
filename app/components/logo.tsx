@@ -4,7 +4,7 @@ import { cn } from "@/app/lib/utils";
 
 function Logo({ size }: { size?: string }) {
   return (
-    <div className={cn(size ? size : "size-10 min-w-10")}>
+    <div className={cn("aspect-square", size ? size : "size-10 min-w-10")}>
       <Image
         src="/burgster-logo.png"
         alt="Burgster LOGO"
