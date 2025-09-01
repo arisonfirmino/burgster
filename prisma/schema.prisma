@@ -17,3 +17,11 @@ model User {
 
   @@map("users")
 }
+
+model Category {
+  id   String @id @default(uuid()) @map("_id")
+  name String
+  slug String
+
+  @@map("categories")
+}
