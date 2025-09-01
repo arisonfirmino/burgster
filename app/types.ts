@@ -11,3 +11,7 @@ export type Product = Prisma.ProductGetPayload<{
 export interface ProductWithDiscountedPrice extends Product {
   totalPrice: number;
 }
+
+export type Review = Prisma.ReviewGetPayload<{
+  include: { user: true };
+}>;

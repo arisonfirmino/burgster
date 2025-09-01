@@ -1,5 +1,6 @@
 import { getCategories } from "@/app/helpers/getCategories";
 import { getProducts } from "@/app/helpers/getProducts";
+import { getReviews } from "@/app/helpers/getReviews";
 
 import { Header } from "@/app/components/ui/header";
 import { HeaderBar } from "@/app/components/header/header-bar";
@@ -11,6 +12,7 @@ import { MenuSection } from "@/app/components/menu/menu-section";
 const Home = async () => {
   const categories = await getCategories();
   const products = await getProducts();
+  const reviews = await getReviews();
 
   return (
     <>
@@ -22,7 +24,11 @@ const Home = async () => {
       </Header>
 
       <main>
-        <MenuSection categories={categories} products={products} />
+        <MenuSection
+          categories={categories}
+          products={products}
+          reviews={reviews}
+        />
       </main>
     </>
   );

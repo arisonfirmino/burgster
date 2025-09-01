@@ -15,18 +15,14 @@ import { ProductWithDiscountedPrice } from "@/app/types";
 
 function ProductItem({ product }: { product: ProductWithDiscountedPrice }) {
   return (
-    <Card
-      className={cn(
-        "aspect-[4/5] max-w-[300px] min-w-[300px] overflow-hidden rounded-xl",
-      )}
-    >
+    <Card className={cn("aspect-[4/5] max-w-[300px] min-w-[300px]")}>
       <CardHeader>
         <ProductImage product={product} />
       </CardHeader>
 
       <CardFooter
         className={cn(
-          "bg-background text-foreground z-10 -mt-5 flex h-full items-center justify-between gap-5 rounded-t-xl px-5 py-2.5",
+          "bg-background z-10 -mt-5 flex h-full items-center justify-between gap-5 rounded-t-xl px-5 py-2.5",
         )}
       >
         <div>
