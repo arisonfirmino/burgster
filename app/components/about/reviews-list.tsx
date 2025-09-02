@@ -4,7 +4,7 @@ import { Review } from "@/app/types";
 
 function ReviewsList({ reviews }: { reviews: Review[] }) {
   return (
-    <div className="flex flex-col items-center gap-5">
+    <div className="flex w-full flex-col items-center gap-5">
       <div className="flex w-full max-w-5xl flex-col items-center justify-center">
         <p className="text-2xl leading-[36px] font-semibold">
           Quem Já Mordeu, Aprova!
