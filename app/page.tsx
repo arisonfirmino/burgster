@@ -8,6 +8,7 @@ import { Separator } from "@/app/components/ui/separator";
 import { HeroSection } from "@/app/components/header/hero/hero-section";
 import { ServiceHighlight } from "@/app/components/header/service-highlight";
 import { MenuSection } from "@/app/components/menu/menu-section";
+import { AboutSection } from "@/app/components/about/about-section";
 
 const Home = async () => {
   const categories = await getCategories();
@@ -24,11 +25,8 @@ const Home = async () => {
       </Header>
 
       <main>
-        <MenuSection
-          categories={categories}
-          products={products}
-          reviews={reviews}
-        />
+        <MenuSection categories={categories} products={products} />
+        <AboutSection reviews={reviews} />
       </main>
     </>
   );

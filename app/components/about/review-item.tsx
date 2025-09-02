@@ -10,7 +10,7 @@ import { Review } from "@/app/types";
 
 function ReviewItem({ review }: { review: Review }) {
   return (
-    <Card className="gap-3 p-3">
+    <Card className="bg-accent text-primary-foreground max-w-xs min-w-xs gap-3 rounded-none p-3">
       <CardHeader>
         <CardDescription className="line-clamp-3">
           {review.text}

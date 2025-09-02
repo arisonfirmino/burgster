@@ -5,17 +5,15 @@ import { useState } from "react";
 import { Search } from "@/app/components/search/search";
 import { CategoriesList } from "@/app/components/menu/categories-list";
 import { ProductsList } from "@/app/components/menu/products-list";
-import { ReviewsList } from "@/app/components/menu/reviews-list";
 
-import { Category, Product, Review } from "@/app/types";
+import { Category, Product } from "@/app/types";
 
 interface MenuSectionProps {
   categories: Category[];
   products: Product[];
-  reviews: Review[];
 }
 
-function MenuSection({ categories, products, reviews }: MenuSectionProps) {
+function MenuSection({ categories, products }: MenuSectionProps) {
   const [activeCategory, setActiveCategory] = useState(categories[0].slug);
 
   const filteredProducts = products.filter(
@@ -42,8 +40,6 @@ function MenuSection({ categories, products, reviews }: MenuSectionProps) {
           <ProductsList products={filteredProducts} />
         </div>
       </div>
-
-      <ReviewsList reviews={reviews} />
     </section>
   );
 }
