@@ -23,7 +23,7 @@ function MenuSection({ categories, products, reviews }: MenuSectionProps) {
   );
 
   return (
-    <section className="bg-foreground text-primary-foreground flex w-full flex-col items-center gap-10 py-10 xl:h-screen">
+    <section className="bg-foreground text-primary-foreground flex w-full flex-col items-center justify-center gap-10 py-10 xl:h-screen">
       <div className="w-full max-w-3xl px-5 lg:px-0">
         <Search
           products={products}
