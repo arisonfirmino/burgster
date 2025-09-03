@@ -1,3 +1,4 @@
+import { cn } from "@/app/lib/utils";
 import {
   Avatar,
   AvatarFallback,
@@ -8,9 +9,14 @@ import { UserIcon } from "lucide-react";
 
 import { User } from "@prisma/client";
 
-function UserAvatar({ user }: { user: Pick<User, "avatar"> }) {
+interface UserAvatarProps {
+  user: Pick<User, "avatar">;
+  size?: string;
+}
+
+function UserAvatar({ user, size }: UserAvatarProps) {
   return (
-    <Avatar>
+    <Avatar className={cn(size ? size : "size-10")}>
       <AvatarImage src={user.avatar ?? ""} />
       <AvatarFallback>
         <UserIcon size={16} />
