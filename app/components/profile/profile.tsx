@@ -7,12 +7,13 @@ import {
   Sheet,
   SheetContent,
   SheetDescription,
+  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/app/components/ui/sheet";
 import { UserAvatar } from "@/app/components/user-avatar";
-import { SignIn } from "@/app/components/profile/signin";
+import { SessionButton } from "@/app/components/profile/session-button";
 
 import { CircleUserIcon } from "lucide-react";
 
@@ -31,13 +32,28 @@ async function Profile() {
         <span className="hidden lg:flex">Minha conta</span>
       </SheetTrigger>
 
-      <SheetContent className="p-5">
-        <SheetHeader>
-          <SheetTitle></SheetTitle>
-          <SheetDescription></SheetDescription>
+      <SheetContent
+        side="top"
+        className="top-5 w-full max-w-[90%] rounded-xl border md:right-5 md:left-auto md:max-w-[350px] md:-translate-x-0"
+      >
+        <SheetHeader className={cn("flex items-center gap-2.5 border-b p-3")}>
+          {session && user && <UserAvatar user={user} />}
+
+          <div>
+            <SheetTitle className={cn("text-base font-semibold")}>
+              {session && user ? user.name : "Bem-vindo(a)!"}
+            </SheetTitle>
+            <SheetDescription className={cn("text-muted-foreground text-xs")}>
+              {session && user
+                ? user.email
+                : "Faça login e aproveite nossos serviços"}
+            </SheetDescription>
+          </div>
         </SheetHeader>
 
-        {session && user ? <p>{user.name}</p> : <SignIn />}
+        <SheetFooter className={cn("border-t p-3")}>
+          <SessionButton />
+        </SheetFooter>
       </SheetContent>
     </Sheet>
   );
