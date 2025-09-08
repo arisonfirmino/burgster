@@ -7,9 +7,7 @@ import {
 } from "@/app/components/ui/card";
 import { ProductImage } from "@/app/components/menu/product-image";
 import { ProductPrice } from "@/app/components/menu/product-price";
-import { Button } from "@/app/components/ui/button";
-
-import { ShoppingBagIcon } from "lucide-react";
+import { ProductDetails } from "@/app/components/menu/product-details";
 
 import { ProductWithDiscountedPrice } from "@/app/types";
 
@@ -30,9 +28,7 @@ function ProductItem({ product }: { product: ProductWithDiscountedPrice }) {
           <ProductPrice product={product} />
         </div>
 
-        <Button size="icon">
-          <ShoppingBagIcon />
-        </Button>
+        <ProductDetails product={product} />
       </CardFooter>
     </Card>
   );

@@ -32,10 +32,7 @@ async function Profile() {
         <span className="hidden lg:flex">Minha conta</span>
       </SheetTrigger>
 
-      <SheetContent
-        side="top"
-        className="top-5 w-full max-w-[90%] rounded-xl border md:right-5 md:left-auto md:max-w-[350px] md:-translate-x-0"
-      >
+      <SheetContent side="top">
         <SheetHeader className={cn("flex items-center gap-2.5 border-b p-3")}>
           {session && user && <UserAvatar user={user} />}
 

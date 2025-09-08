@@ -48,7 +48,7 @@ function Search({ size, variant, className, products }: SearchProps) {
       <SheetContent
         side="top"
         className={cn(
-          "flex w-full flex-col items-center gap-5 border-none bg-transparent p-5 shadow-none md:max-w-lg md:px-0",
+          "gap-5 bg-transparent md:left-1/2 md:max-w-md md:-translate-x-1/2",
         )}
       >
         <SheetTitle className="hidden" />
