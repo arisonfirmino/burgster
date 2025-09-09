@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Search } from "@/app/components/search/search";
 import { CategoriesList } from "@/app/components/menu/categories-list";
 import { ProductsList } from "@/app/components/menu/products-list";
+import { ServicesList } from "@/app/components/menu/services-list";
 
 import { Category, Product } from "@/app/types";
 
@@ -40,6 +41,8 @@ function MenuSection({ categories, products }: MenuSectionProps) {
           <ProductsList products={filteredProducts} />
         </div>
       </div>
+
+      <ServicesList />
     </section>
   );
 }
